@@ -3,7 +3,11 @@ import EmojiTik from "../../../components/stikersComp/EmojiTik";
 export default function SignUp() {
     return (
         <>
-            <div className="flex mt-10 items-center justify-center ">
+            <div className="flex mt-10 justify-center py-8 h-[36rem] [&::-webkit-scrollbar]:w-2
+  [&::-webkit-scrollbar-track]:bg-gray-100
+  [&::-webkit-scrollbar-thumb]:bg-gray-300
+  dark:[&::-webkit-scrollbar-track]:bg-green-200
+  dark:[&::-webkit-scrollbar-thumb]:bg-neutral-500 p-6 overflow-y-auto  px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6  ">
                 <div className="grid grid-cols-1  md:grid-cols-2 gap-8 w-full max-w-4xl">
                     {/* ////////// */}
                     <div className="text-white space-y-6">

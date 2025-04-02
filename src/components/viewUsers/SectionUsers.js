@@ -17,7 +17,7 @@ export default function SectionAllUsers() {
   useEffect(() => {
     const interval = setInterval(() => {
       setIndex((prevIndex) => (prevIndex + 1) % umoji.length);
-    }, 1000);
+    }, 5000);
 
     return () => clearInterval(interval);
   }, []);
@@ -129,11 +129,16 @@ export default function SectionAllUsers() {
   return (
     <>
       <section className="bg-white pb-3 pt-3 mb-5 border  dark:border-green-800 border-green-500 dark:bg-gray-900">
+
+
         <div className="py-8 h-[36rem] [&::-webkit-scrollbar]:w-2
   [&::-webkit-scrollbar-track]:bg-gray-100
   [&::-webkit-scrollbar-thumb]:bg-gray-300
   dark:[&::-webkit-scrollbar-track]:bg-green-200
   dark:[&::-webkit-scrollbar-thumb]:bg-neutral-500 p-6 overflow-y-auto  px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6 ">
+
+
+
           <div className="mx-auto max-w-screen-sm text-center mb-8 lg:mb-16">
             <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">OlCampus</h2>
             <div className=" flex items-center justify-center ">
@@ -179,9 +184,9 @@ export default function SectionAllUsers() {
                   <ul className="flex space-x-4 sm:mt-0">
                     <li className="">
 
-                      <button  className="text-gray-500 hover:text-gray-900 dark:hover:text-white">
+                      <button className="text-gray-500 hover:text-gray-900 dark:hover:text-white">
                         <div className=" flex justify-center  text-center ">
-                          <svg className= {`w-[40px] h-[40px] animate-pulse text-red-600 dark:text-red-600 `} aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="currentColor" viewBox="0 0 24 24">
+                          <svg className={`w-[40px] h-[40px] animate-pulse text-red-600 dark:text-red-600 `} aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="currentColor" viewBox="0 0 24 24">
                             <path d="m12.75 20.66 6.184-7.098c2.677-2.884 2.559-6.506.754-8.705-.898-1.095-2.206-1.816-3.72-1.855-1.293-.034-2.652.43-3.963 1.442-1.315-1.012-2.678-1.476-3.973-1.442-1.515.04-2.825.76-3.724 1.855-1.806 2.201-1.915 5.823.772 8.706l6.183 7.097c.19.216.46.34.743.34a.985.985 0 0 0 .743-.34Z" />
                           </svg>
                           <span className="mt-2">0</span>

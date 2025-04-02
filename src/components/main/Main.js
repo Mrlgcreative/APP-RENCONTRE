@@ -8,7 +8,7 @@ export default function Main() {
         
         <div className="max-w-screen-xl px-4 mx-auto 2xl:px-0 py-4">
     
-    <div className="border-2  rounded-lg border-gray-300 dark:border-gray-600 h-20 mb-4" />
+    
             {/* <Test/> */}
             <SectionAllUsers/>
     <div className="grid grid-cols-2 gap-4 mb-4">

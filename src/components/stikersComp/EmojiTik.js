@@ -14,7 +14,7 @@ export default function EmojiTik () {
     useEffect(() => {
       const interval = setInterval(() => {
         setIndex((prevIndex) => (prevIndex + 1) % umoji.length);
-      }, 1000);
+      }, 6000);
   
       return () => clearInterval(interval);
     }, []);

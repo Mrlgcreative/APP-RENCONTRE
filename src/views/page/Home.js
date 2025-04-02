@@ -1,12 +1,18 @@
-import ThemeToggle from "../Theme/ThemeToggle";
+import Aside from "../../components/aside/Aside";
+import Footer from "../../components/footer/Footer";
+import Navbar from "../../components/header/Navbar";
+import Main from "../../components/main/Main";
 
-export default function Home (){
-    return(
+export default function Home() {
+    return (
         <>
-        <ThemeToggle/>
-           <button className="px-4 py-2 bg-blue-500 text-white rounded-lg shadow-md hover:bg-blue-600">
-      Cliquez-moi
-    </button>
+            
+                {/* <Navbar /> */}
+                {/* <Aside /> */}
+                <Main />
+                {/* <Footer/> */}
+            
+
         </>
     )
 }

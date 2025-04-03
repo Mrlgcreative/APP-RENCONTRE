@@ -128,7 +128,7 @@ export default function SectionAllUsers() {
 
   return (
     <>
-      <section className="bg-white pb-3 pt-3 mb-5 border  dark:border-green-800 border-green-500 dark:bg-gray-900">
+      <section className="bg-white mt-10 pb-3 pt-3 mb-5 border  rounded dark:border-green-800 border-green-500 dark:bg-gray-900">
 
 
         <div className="py-8 h-[36rem] [&::-webkit-scrollbar]:w-2

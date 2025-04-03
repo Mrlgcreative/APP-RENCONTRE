@@ -6,7 +6,7 @@ export default function SignIn() {
         <>
 
 
-            <div className="flex mt-10 justify-center py-8 h-[36rem] [&::-webkit-scrollbar]:w-2
+            <div className="flex  justify-center py-8 h-[36rem] [&::-webkit-scrollbar]:w-2
   [&::-webkit-scrollbar-track]:bg-gray-100
   [&::-webkit-scrollbar-thumb]:bg-gray-300
   dark:[&::-webkit-scrollbar-track]:bg-green-200
@@ -66,7 +66,7 @@ export default function SignIn() {
                             <span className="text-gray-400 text-sm">By signing up, you agree to our Terms of Use and Privacy Policy.</span>
                         </div>
 
-                        <button className="w-full rounded-lg bg-blue-600 text-white py-2 ">Create an account</button>
+                        <button className="w-full rounded-lg bg-blue-600 text-white py-2 ">Sign In</button>
 
                         <p className="text-gray-400 text-sm mt-4 text-center">Already have an account? <a href="/register" className="text-blue-400">Sign in here</a></p>
                     </div>

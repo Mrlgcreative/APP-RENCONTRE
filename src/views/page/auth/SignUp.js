@@ -3,7 +3,7 @@ import EmojiTik from "../../../components/stikersComp/EmojiTik";
 export default function SignUp() {
     return (
         <>
-            <div className="flex mt-10 justify-center py-8 h-[36rem] [&::-webkit-scrollbar]:w-2
+            <div className="flex mt-1 justify-center py-8 h-[36rem] [&::-webkit-scrollbar]:w-2
   [&::-webkit-scrollbar-track]:bg-gray-100
   [&::-webkit-scrollbar-thumb]:bg-gray-300
   dark:[&::-webkit-scrollbar-track]:bg-green-200
@@ -83,7 +83,7 @@ export default function SignUp() {
 
                         <button className="w-full rounded-lg bg-blue-600 text-white py-2 ">Create an account</button>
 
-                        <p className="text-gray-400 text-sm mt-4 text-center">Already have an account? <a href="#" className="text-blue-400">Sign in here</a></p>
+                        <p className="text-gray-400 text-sm mt-4 text-center">Already have an account? <a href="/login" className="text-blue-400">Sign in here</a></p>
                     </div>
                 </div>
             </div>

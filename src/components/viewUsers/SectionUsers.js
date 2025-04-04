@@ -3,7 +3,7 @@ import { Button, Modal, ModalBody, ModalHeader } from "flowbite-react";
 import 'swiper/css';
 
 export default function SectionAllUsers() {
-  const [islikUse, setLikuse] = useState(false);
+  
   const [openLikeModal, setOpenLikeModal] = useState(false);
 
   const umoji = [
@@ -27,12 +27,7 @@ export default function SectionAllUsers() {
 
   const url = 'https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/bonnie-green.png'
   const Films = [
-    {
-      id: 15,
-      title: 'Jujutsu kaisen',
-      videoUrl: `${url}`,
-      description: 'MANGA FILM',
-    },
+   
     {
       id: 1,
       title: 'The women king',
@@ -114,6 +109,12 @@ export default function SectionAllUsers() {
       description: '',
     },
     {
+      id: 15,
+      title: 'Jujutsu kaisen',
+      videoUrl: `${url}`,
+      description: 'MANGA FILM',
+    },
+    {
       id: 16,
       title: 'Pirates Des Caraibes',
       videoUrl: `${url}`,
@@ -152,9 +153,9 @@ export default function SectionAllUsers() {
             <p className=" text-gray-500 lg:mb-16 sm:text-xl dark:text-gray-400">Bienvenue sur OlC scroller dans cette section et trouve vos nouveau companions ou peut-etre votre </p>
           </div>
           <div className="grid gap-8 mb-6 lg:mb-16 md:grid-cols-2">
-            {Films.map((Films) => (
+            {Films.map(( Films, index) => (
 
-              <div className="items-center bg-gray-50 rounded-lg shadow sm:flex dark:bg-gray-800 dark:border-gray-700">
+              <div key={index} className="items-center bg-gray-50 rounded-lg shadow sm:flex dark:bg-gray-800 dark:border-gray-700">
                 <a href="#">
                   <img className="w-full rounded-lg sm:rounded-none sm:rounded-l-lg" src={Films.videoUrl} alt="Bonnie Avatar" />
                 </a>

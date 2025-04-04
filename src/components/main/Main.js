@@ -2,7 +2,6 @@
 
 import CommentBox from "../commentSection/commentBox";
 import HomeHeader from "../homeHeader/HomeHeader";
-import { Flowebit } from "../test/Flowebit";
 import SectionAllUsers from "../viewUsers/SectionUsers";
 
 export default function Main() {

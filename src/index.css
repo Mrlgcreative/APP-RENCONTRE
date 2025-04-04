@@ -32,6 +32,13 @@ body { background-color: rgba(3, 28, 139, 0.071) }
     background: #555;
   } 
 
+  .customM{
+    background:rgba(65, 27, 57, 0.74);
+  }
+
+.dropdownUser{
+  width: 200px ;
+}
 
 @tailwind base;
 @tailwind components;

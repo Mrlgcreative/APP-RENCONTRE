@@ -7,6 +7,7 @@
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.2.0",
     "@testing-library/user-event": "^13.5.0",
+    "flowbite-react": "^0.11.7",
     "framer-motion": "^12.6.2",
     "lucide-react": "^0.486.0",
     "next-themes": "^0.4.6",
@@ -22,7 +23,8 @@
     "start": "react-scripts start --host 0.0.0.0",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "postinstall": "flowbite-react patch && flowbite-react register"
   },
   "eslintConfig": {
     "extends": [

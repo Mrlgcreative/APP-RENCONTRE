@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Flowebit } from "./Flowebit";
 
 const images = [
   "https://fonts.gstatic.com/s/e/notoemoji/latest/1f970/512.gif",
@@ -18,6 +19,7 @@ export default function Test  ()  {
   };
 
   return (
+    <>
     <div className="relative w-full max-w-3xl mx-auto overflow-hidden">
       {/* Slides */}
       <div
@@ -56,6 +58,9 @@ export default function Test  ()  {
         ))}
       </div>
     </div>
+
+    <Flowebit/>
+    </>
   );
 };
 

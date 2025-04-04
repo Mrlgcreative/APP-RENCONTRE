@@ -14,7 +14,9 @@ export default function HomeHeader() {
 
           
 
-<section className="bg-center rounded-lg bg-no-repeat bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/conference.jpg')] bg-gray-700 bg-blend-multiply">
+<section className="bg-center rounded
+bg-no-repeat  bg-cover bg-[url('https://st3.depositphotos.com/9880800/16020/i/450/depositphotos_160207328-stock-photo-happy-friends-at-festival-of.jpg')] 
+bg-gray-700 bg-blend-multiply">
   <div className="px-4 justify-center items-center mx-auto max-w-screen-xl text-center py-24 lg:py-56">
 <div className=' '>
 

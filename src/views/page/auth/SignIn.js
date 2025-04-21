@@ -49,11 +49,11 @@ export default function SignIn() {
                                 <EmojiTik />
                             </div>
                         </div>
-                        <div className="flex gap-2">
+                        {/* <div className="flex gap-2">
 
                             <button className="w-full flex  rounded-lg border items-center justify-center bg-hidden dark:text-gray-100 py-2  mb-2"> Sign up with Google</button>
                             <button className="w-full flex rounded-lg border items-center justify-center bg-hidden dark:text-gray-100 py-2  mb-2"> Sign up with Apple</button>
-                        </div>
+                        </div> */}
 
                         <div className="text-center text-gray-400 mb-4">or</div>
 

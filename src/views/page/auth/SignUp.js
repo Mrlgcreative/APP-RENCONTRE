@@ -156,11 +156,14 @@ export default function SignUp() {
      <form onSubmit={handleSubmit} className="max-w-md mx-auto p-4">
       <input type="text" placeholder="Noms" value={formData.noms} onChange={handleChange} className="w-full p-2 dark:bg-gray-700 rounded  mb-2" />
       <input type="text" placeholder="Prenom" value={formData.prenom} onChange={handleChange} className="w-full p-2 dark:bg-gray-700 rounded  mb-2" />
-      <input type="text" placeholder="Pseudo" value={formData.pseudo} onChange={handleChange} className="w-full p-2 dark:bg-gray-700 rounded mb-4" />
-      <input type="text" placeholder="E-Mail" value={formData.email} onChange={handleChange} className="w-full p-2 dark:bg-gray-700 rounded mb-4" />
-      <input type="text" placeholder="Date de naissance" value={formData.dateNaissance} onChange={handleChange} className="w-full p-2 dark:bg-gray-700 rounded mb-4" />
-      <input type="password" placeholder="Password" value={formData.password} onChange={handleChange} className="w-full p-2 dark:bg-gray-700 rounded mb-4" />
-      <input type="password" placeholder="Confirmer Password"  value={formData.confirmPassword}  onChange={handleChange} className="w-full p-2 dark:bg-gray-700 rounded mb-4" />
+      <input type="text" placeholder="Pseudo" value={formData.pseudo} onChange={handleChange} className="w-full p-2 dark:bg-gray-700 rounded mb-2" />
+      <input type="text" placeholder="E-Mail" value={formData.email} onChange={handleChange} className="w-full p-2 dark:bg-gray-700 rounded mb-2" />
+      {/* <input type="text" placeholder="Date de naissance" value={formData.dateNaissance} onChange={handleChange} className="w-full p-2 dark:bg-gray-700 rounded mb-4" /> */}
+      <label className="font-semibold dark:text-white text-black">Date de naissance</label>
+      <input type="datetime-local"  placeholder="Date de naissance" value={formData.dateNaissance} onChange={(e) => setFormData({ ...formData, dateNaissance: e.target.value })} className="w-full p-2 dark:bg-gray-700 rounded mb-2" />
+
+      <input type="password" placeholder="Password" value={formData.password} onChange={handleChange} className="w-full p-2 dark:bg-gray-700 rounded mb-2" />
+      <input type="password" placeholder="Confirmer Password"  value={formData.confirmPassword}  onChange={handleChange} className="w-full p-2 dark:bg-gray-700 rounded mb-2" />
       <button type="submit" className="w-full rounded-lg bg-blue-600 text-white py-2">Créer votre compte</button>
     </form>
 

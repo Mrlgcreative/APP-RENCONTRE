@@ -19,6 +19,16 @@
       "dateNaissance": "kskfkl",
       "password": "12345",
       "confirmPassword": "12345"
+    },
+    {
+      "id": "3a0c",
+      "noms": "Naruto uzumaki",
+      "prenom": "shippuden",
+      "pseudo": "kage",
+      "email": "www.benatardyav@gmail.com",
+      "dateNaissance": "2001-08-12T07:49",
+      "password": "1234",
+      "confirmPassword": "1234"
     }
   ],
   "posts": [

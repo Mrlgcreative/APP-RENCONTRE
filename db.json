@@ -29,6 +29,16 @@
       "dateNaissance": "2001-08-12T07:49",
       "password": "1234",
       "confirmPassword": "1234"
+    },
+    {
+      "id": "27c7",
+      "Name": "hsdjfhkdshfksdhfhskdhjsd",
+      "subname": "kjdfhkshfkjd",
+      "surname": "jdhfhfksdhf",
+      "email": "www.benatardyav@gmail.com",
+      "birthday": "2025-04-09T08:31",
+      "password": "1234",
+      "confirmPassword": "1234"
     }
   ],
   "posts": [

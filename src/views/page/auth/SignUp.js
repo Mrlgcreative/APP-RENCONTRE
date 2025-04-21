@@ -9,11 +9,11 @@ export default function SignUp() {
     const API_URL = "http://localhost:3000/users";
 
     const [formData, setFormData] = useState({
-        noms: '',
-        prenom: '',
-        pseudo: '',
+        name: '',
+        subname: '',
+        surname: '',
         email: '',
-        dateNaissance: '',
+        birthday: '',
         password: '',
         confirmPassword: ''
       });
@@ -21,11 +21,11 @@ export default function SignUp() {
       const handleChange = (e) => {
         const { placeholder, value } = e.target;
         const key = {
-          'Noms': 'noms',
-          'Prenom': 'prenom',
-          'Pseudo': 'pseudo',
+          'name': 'name',
+          'subname': 'subname',
+          'surname': 'surname',
           'E-Mail': 'email',
-          'Date de naissance': 'dateNaissance',
+          'Date de naissance': 'birthday',
           'Password': 'password',
           'Confirmer Password': 'confirmPassword'
         }[placeholder.trim()];
@@ -58,11 +58,11 @@ export default function SignUp() {
           alert('Inscription réussie !');
           // Réinitialiser le formulaire si besoin
           setFormData({
-            noms: '',
-            prenom: '',
-            pseudo: '',
+            name: '',
+            subname: '',
+            surname: '',
             email: '',
-            dateNaissance: '',
+            birthday: '',
             password: '',
             confirmPassword: ''
           });
@@ -135,7 +135,7 @@ export default function SignUp() {
 
                     {/* /////// */}
                     <div className=" dark:bg-gray-800  rounded-lg p-6 shadow w-full max-w-md">
-                        <div className="flex gap-4">
+                        <div className="flex ml-5 gap-4">
                             <div>
 
                                 <h2 className=" tracking-tight font-bold dark:text-white mb-4">Creer Votre Compt OlCampus Maintenant </h2>
@@ -154,13 +154,13 @@ export default function SignUp() {
                         {/* <div className="text-center text-gray-400 mb-4">or</div> */}
 
      <form onSubmit={handleSubmit} className="max-w-md mx-auto p-4">
-      <input type="text" placeholder="Noms" value={formData.noms} onChange={handleChange} className="w-full p-2 dark:bg-gray-700 rounded  mb-2" />
-      <input type="text" placeholder="Prenom" value={formData.prenom} onChange={handleChange} className="w-full p-2 dark:bg-gray-700 rounded  mb-2" />
-      <input type="text" placeholder="Pseudo" value={formData.pseudo} onChange={handleChange} className="w-full p-2 dark:bg-gray-700 rounded mb-2" />
+      <input type="text" placeholder="name" value={formData.name} onChange={handleChange} className="w-full p-2 dark:bg-gray-700 rounded  mb-2" />
+      <input type="text" placeholder="subname" value={formData.subname} onChange={handleChange} className="w-full p-2 dark:bg-gray-700 rounded  mb-2" />
+      <input type="text" placeholder="surname" value={formData.surname} onChange={handleChange} className="w-full p-2 dark:bg-gray-700 rounded mb-2" />
       <input type="text" placeholder="E-Mail" value={formData.email} onChange={handleChange} className="w-full p-2 dark:bg-gray-700 rounded mb-2" />
-      {/* <input type="text" placeholder="Date de naissance" value={formData.dateNaissance} onChange={handleChange} className="w-full p-2 dark:bg-gray-700 rounded mb-4" /> */}
+      {/* <input type="text" placeholder="Date de naissance" value={formData.birthday} onChange={handleChange} className="w-full p-2 dark:bg-gray-700 rounded mb-4" /> */}
       <label className="font-semibold dark:text-white text-black">Date de naissance</label>
-      <input type="datetime-local"  placeholder="Date de naissance" value={formData.dateNaissance} onChange={(e) => setFormData({ ...formData, dateNaissance: e.target.value })} className="w-full p-2 dark:bg-gray-700 rounded mb-2" />
+      <input type="datetime-local"  placeholder="Date de naissance" value={formData.birthday} onChange={(e) => setFormData({ ...formData, birthday: e.target.value })} className="w-full p-2 dark:bg-gray-700 rounded mb-2" />
 
       <input type="password" placeholder="Password" value={formData.password} onChange={handleChange} className="w-full p-2 dark:bg-gray-700 rounded mb-2" />
       <input type="password" placeholder="Confirmer Password"  value={formData.confirmPassword}  onChange={handleChange} className="w-full p-2 dark:bg-gray-700 rounded mb-2" />

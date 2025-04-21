@@ -12,6 +12,9 @@ import Test from './components/test/Test';
 import { useEffect, useState } from 'react';
 import EmojiTik from './components/stikersComp/EmojiTik';
 import LoadingPage from './views/page/Loading/LoadingPage';
+import { ProfilUser } from './components/header/ProfilUser';
+import PageUserProfile from './views/page/profil/PageUserProfile';
+import ViewGaleryUsers from './views/page/viewGaleryUsers/ViewGaleryUsers';
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -50,6 +53,8 @@ function App() {
                       <Route path="/login" element={<SignIn />} />
                       <Route path="/register" element={<SignUp />} />
                       <Route path="/test" element={<Test />} />
+                      <Route path="/profil" element={<PageUserProfile />} />
+                      <Route path="/galeryLove" element={<ViewGaleryUsers/>} />
                       <Route path="*" element={<NotFound />} />
                     </Routes>
                   </BrowserRouter>

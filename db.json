@@ -1,0 +1,51 @@
+{
+  "users": [
+    {
+      "id": "70df",
+      "noms": "Yav kasend ",
+      "prenom": "benatard",
+      "pseudo": "Sabeer",
+      "email": "www.benatardyav@gmail.com",
+      "dateNaissance": "12/08/2024",
+      "password": "1234",
+      "confirmPassword": "1234"
+    },
+    {
+      "id": "a518",
+      "noms": "hfdjshf",
+      "prenom": "iifjwlfj",
+      "pseudo": "jflrwjw",
+      "email": "jdsffsdlj",
+      "dateNaissance": "kskfkl",
+      "password": "12345",
+      "confirmPassword": "12345"
+    }
+  ],
+  "posts": [
+    {
+      "id": "1",
+      "title": "a title",
+      "views": 100
+    },
+    {
+      "id": "2",
+      "title": "another title",
+      "views": 200
+    }
+  ],
+  "comments": [
+    {
+      "id": "1",
+      "text": "a comment about post 1",
+      "postId": "1"
+    },
+    {
+      "id": "2",
+      "text": "another comment about post 1",
+      "postId": "1"
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

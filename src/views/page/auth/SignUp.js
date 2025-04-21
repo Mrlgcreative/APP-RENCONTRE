@@ -1,6 +1,89 @@
+import React, { useState } from 'react';
+import axios from 'axios';
 import EmojiTik from "../../../components/stikersComp/EmojiTik";
 
+
+
 export default function SignUp() {
+
+    const API_URL = "http://localhost:3000/users";
+
+    const [formData, setFormData] = useState({
+        noms: '',
+        prenom: '',
+        pseudo: '',
+        email: '',
+        dateNaissance: '',
+        password: '',
+        confirmPassword: ''
+      });
+    
+      const handleChange = (e) => {
+        const { placeholder, value } = e.target;
+        const key = {
+          'Noms': 'noms',
+          'Prenom': 'prenom',
+          'Pseudo': 'pseudo',
+          'E-Mail': 'email',
+          'Date de naissance': 'dateNaissance',
+          'Password': 'password',
+          'Confirmer Password': 'confirmPassword'
+        }[placeholder.trim()];
+        setFormData({ ...formData, [key]: value });
+      };
+    
+      const isFormValid = () => {
+        for (let key in formData) {
+          if (formData[key].trim() === '') {
+            alert(`Le champ "${key}" est obligatoire.`);
+            return false;
+          }
+        }
+    
+        if (formData.password !== formData.confirmPassword) {
+          alert("Les mots de passe ne correspondent pas.");
+          return false;
+        }
+    
+        return true;
+      };
+    
+      const handleSubmit = async (e) => {
+        e.preventDefault();
+    
+        if (!isFormValid()) return;
+    
+        try {
+          await axios.post(API_URL, formData);
+          alert('Inscription réussie !');
+          // Réinitialiser le formulaire si besoin
+          setFormData({
+            noms: '',
+            prenom: '',
+            pseudo: '',
+            email: '',
+            dateNaissance: '',
+            password: '',
+            confirmPassword: ''
+          });
+        } catch (error) {
+          console.error('Erreur lors de l’envoi :', error);
+        }
+      };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     return (
         <>
             <div className="flex mt-1 justify-center py-8 h-[36rem] [&::-webkit-scrollbar]:w-2
@@ -13,8 +96,8 @@ export default function SignUp() {
                     <div className="text-white space-y-6">
                         <h1 className="text-3xl font-bold flex items-center">
                             <span className="text-green-700 dark:text-green-300 text-4xl mr-2">
-                            OlCampus
-                            </span> 
+                                OlCampus
+                            </span>
                         </h1>
                         <p className="text-gray-400  "> Integrate with developer-friendly APIs or choose low-code.</p>
                         <div className="flex gap-4">
@@ -62,28 +145,34 @@ export default function SignUp() {
                                 <EmojiTik />
                             </div>
                         </div>
-                        <div className="flex gap-2">
+                        {/* <div className="flex gap-2">
 
                             <button className="w-full flex  rounded-lg border items-center justify-center bg-hidden dark:text-gray-100 py-2  mb-2"> Sign up with Google</button>
                             <button className="w-full flex rounded-lg border items-center justify-center bg-hidden dark:text-gray-100 py-2  mb-2"> Sign up with Apple</button>
-                        </div>
+                        </div> */}
 
-                        <div className="text-center text-gray-400 mb-4">or</div>
+                        {/* <div className="text-center text-gray-400 mb-4">or</div> */}
 
-                        <input type="email" placeholder="Your email" className="w-full p-2 dark:bg-gray-700 rounded text-white mb-2" />
+     <form onSubmit={handleSubmit} className="max-w-md mx-auto p-4">
+      <input type="text" placeholder="Noms" value={formData.noms} onChange={handleChange} className="w-full p-2 dark:bg-gray-700 rounded  mb-2" />
+      <input type="text" placeholder="Prenom" value={formData.prenom} onChange={handleChange} className="w-full p-2 dark:bg-gray-700 rounded  mb-2" />
+      <input type="text" placeholder="Pseudo" value={formData.pseudo} onChange={handleChange} className="w-full p-2 dark:bg-gray-700 rounded mb-4" />
+      <input type="text" placeholder="E-Mail" value={formData.email} onChange={handleChange} className="w-full p-2 dark:bg-gray-700 rounded mb-4" />
+      <input type="text" placeholder="Date de naissance" value={formData.dateNaissance} onChange={handleChange} className="w-full p-2 dark:bg-gray-700 rounded mb-4" />
+      <input type="password" placeholder="Password" value={formData.password} onChange={handleChange} className="w-full p-2 dark:bg-gray-700 rounded mb-4" />
+      <input type="password" placeholder="Confirmer Password"  value={formData.confirmPassword}  onChange={handleChange} className="w-full p-2 dark:bg-gray-700 rounded mb-4" />
+      <button type="submit" className="w-full rounded-lg bg-blue-600 text-white py-2">Créer votre compte</button>
+    </form>
 
-                        <input type="password" placeholder="Password" className="w-full p-2 dark:bg-gray-700 rounded text-white mb-4" />
-                        <input type="password" placeholder="Password" className="w-full p-2 dark:bg-gray-700 rounded text-white mb-4" />
-                        <input type="password" placeholder="Password" className="w-full p-2 dark:bg-gray-700 rounded text-white mb-4" />
 
-                        <div className="flex items-center mb-4">
+                        {/* <div className="flex items-center mb-4">
                             <input type="checkbox" className="mr-2" />
                             <span className="text-gray-400 text-sm">By signing up, you agree to our Terms of Use and Privacy Policy.</span>
-                        </div>
+                        </div> */}
 
-                        <button className="w-full rounded-lg bg-blue-600 text-white py-2 ">Create an account</button>
+                        
 
-                        <p className="text-gray-400 text-sm mt-4 text-center">Already have an account? <a href="/login" className="text-blue-400">Sign in here</a></p>
+                        <p className="text-gray-400 text-sm mt-4 text-center">Vous avez déjà un compte ? <a href="/login" className="text-blue-400"> Connectez-vous ici</a></p>
                     </div>
                 </div>
             </div>

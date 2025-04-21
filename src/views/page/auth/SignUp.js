@@ -2,7 +2,27 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import EmojiTik from "../../../components/stikersComp/EmojiTik";
 
+import { Notyf } from 'notyf';
 
+const notyf = new Notyf({
+    dismissible: true, ripple: false,
+    duration: 1000,
+    position: { x: 'rigth', y: 'top' },
+    types: [
+      {
+        type: 'warning',
+        background: 'orange',
+        icon: { className: 'material-icons', tagName: 'i', text: 'warning' }
+      },
+      {
+        type: 'error',
+        background: 'indianred',
+        duration: 3000,
+        dismissible: true
+      }
+    ]
+  });
+  
 
 export default function SignUp() {
 
@@ -16,60 +36,60 @@ export default function SignUp() {
         birthday: '',
         password: '',
         confirmPassword: ''
-      });
-    
-      const handleChange = (e) => {
+    });
+
+    const handleChange = (e) => {
         const { placeholder, value } = e.target;
         const key = {
-          'name': 'name',
-          'subname': 'subname',
-          'surname': 'surname',
-          'E-Mail': 'email',
-          'Date de naissance': 'birthday',
-          'Password': 'password',
-          'Confirmer Password': 'confirmPassword'
+            'name': 'name',
+            'subname': 'subname',
+            'surname': 'surname',
+            'E-Mail': 'email',
+            'Date de naissance': 'birthday',
+            'Password': 'password',
+            'Confirmer Password': 'confirmPassword'
         }[placeholder.trim()];
         setFormData({ ...formData, [key]: value });
-      };
-    
-      const isFormValid = () => {
+    };
+
+    const isFormValid = () => {
         for (let key in formData) {
-          if (formData[key].trim() === '') {
-            alert(`Le champ "${key}" est obligatoire.`);
-            return false;
-          }
+            if (formData[key].trim() === '') {
+                notyf.error(`Le champ "${key}" est obligatoire.`);
+                return false;
+            }
         }
-    
+
         if (formData.password !== formData.confirmPassword) {
-          alert("Les mots de passe ne correspondent pas.");
-          return false;
+            notyf.error("Les mots de passe ne correspondent pas.");
+            return false;
         }
-    
+
         return true;
-      };
-    
-      const handleSubmit = async (e) => {
+    };
+
+    const handleSubmit = async (e) => {
         e.preventDefault();
-    
+
         if (!isFormValid()) return;
-    
+
         try {
-          await axios.post(API_URL, formData);
-          alert('Inscription réussie !');
-          // Réinitialiser le formulaire si besoin
-          setFormData({
-            name: '',
-            subname: '',
-            surname: '',
-            email: '',
-            birthday: '',
-            password: '',
-            confirmPassword: ''
-          });
+            await axios.post(API_URL, formData);
+            notyf.success('Inscription réussie !');
+            // Réinitialiser le formulaire si besoin
+            setFormData({
+                name: '',
+                subname: '',
+                surname: '',
+                email: '',
+                birthday: '',
+                password: '',
+                confirmPassword: ''
+            });
         } catch (error) {
-          console.error('Erreur lors de l’envoi :', error);
+            console.error('Erreur lors de l’envoi :', error);
         }
-      };
+    };
 
 
 
@@ -153,19 +173,19 @@ export default function SignUp() {
 
                         {/* <div className="text-center text-gray-400 mb-4">or</div> */}
 
-     <form onSubmit={handleSubmit} className="max-w-md mx-auto p-4">
-      <input type="text" placeholder="name" value={formData.name} onChange={handleChange} className="w-full p-2 dark:bg-gray-700 rounded  mb-2" />
-      <input type="text" placeholder="subname" value={formData.subname} onChange={handleChange} className="w-full p-2 dark:bg-gray-700 rounded  mb-2" />
-      <input type="text" placeholder="surname" value={formData.surname} onChange={handleChange} className="w-full p-2 dark:bg-gray-700 rounded mb-2" />
-      <input type="text" placeholder="E-Mail" value={formData.email} onChange={handleChange} className="w-full p-2 dark:bg-gray-700 rounded mb-2" />
-      {/* <input type="text" placeholder="Date de naissance" value={formData.birthday} onChange={handleChange} className="w-full p-2 dark:bg-gray-700 rounded mb-4" /> */}
-      <label className="font-semibold dark:text-white text-black">Date de naissance</label>
-      <input type="datetime-local"  placeholder="Date de naissance" value={formData.birthday} onChange={(e) => setFormData({ ...formData, birthday: e.target.value })} className="w-full p-2 dark:bg-gray-700 rounded mb-2" />
+                        <form onSubmit={handleSubmit} className="max-w-md mx-auto p-4">
+                            <input type="text" placeholder="name" value={formData.name} onChange={handleChange} className="w-full p-2 dark:bg-gray-700 rounded  mb-2" />
+                            <input type="text" placeholder="subname" value={formData.subname} onChange={handleChange} className="w-full p-2 dark:bg-gray-700 rounded  mb-2" />
+                            <input type="text" placeholder="surname" value={formData.surname} onChange={handleChange} className="w-full p-2 dark:bg-gray-700 rounded mb-2" />
+                            <input type="text" placeholder="E-Mail" value={formData.email} onChange={handleChange} className="w-full p-2 dark:bg-gray-700 rounded mb-2" />
+                            {/* <input type="text" placeholder="Date de naissance" value={formData.birthday} onChange={handleChange} className="w-full p-2 dark:bg-gray-700 rounded mb-4" /> */}
+                            <label className="font-semibold dark:text-white text-black">Date de naissance</label>
+                            <input type="datetime-local" placeholder="Date de naissance" value={formData.birthday} onChange={(e) => setFormData({ ...formData, birthday: e.target.value })} className="w-full p-2 dark:bg-gray-700 rounded mb-2" />
 
-      <input type="password" placeholder="Password" value={formData.password} onChange={handleChange} className="w-full p-2 dark:bg-gray-700 rounded mb-2" />
-      <input type="password" placeholder="Confirmer Password"  value={formData.confirmPassword}  onChange={handleChange} className="w-full p-2 dark:bg-gray-700 rounded mb-2" />
-      <button type="submit" className="w-full rounded-lg bg-blue-600 text-white py-2">Créer votre compte</button>
-    </form>
+                            <input type="password" placeholder="Password" value={formData.password} onChange={handleChange} className="w-full p-2 dark:bg-gray-700 rounded mb-2" />
+                            <input type="password" placeholder="Confirmer Password" value={formData.confirmPassword} onChange={handleChange} className="w-full p-2 dark:bg-gray-700 rounded mb-2" />
+                            <button type="submit" className="w-full rounded-lg bg-blue-600 text-white py-2">Créer votre compte</button>
+                        </form>
 
 
                         {/* <div className="flex items-center mb-4">
@@ -173,7 +193,7 @@ export default function SignUp() {
                             <span className="text-gray-400 text-sm">By signing up, you agree to our Terms of Use and Privacy Policy.</span>
                         </div> */}
 
-                        
+
 
                         <p className="text-gray-400 text-sm mt-4 text-center">Vous avez déjà un compte ? <a href="/login" className="text-blue-400"> Connectez-vous ici</a></p>
                     </div>

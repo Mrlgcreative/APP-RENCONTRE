@@ -39,6 +39,16 @@
       "birthday": "2025-04-09T08:31",
       "password": "1234",
       "confirmPassword": "1234"
+    },
+    {
+      "id": "9d0c",
+      "name": "hdfjhd",
+      "subname": "fdf",
+      "surname": "fdf",
+      "email": "www.benatardyav@gmail.com",
+      "birthday": "2025-04-21T11:15",
+      "password": "1234",
+      "confirmPassword": "1234"
     }
   ],
   "posts": [
